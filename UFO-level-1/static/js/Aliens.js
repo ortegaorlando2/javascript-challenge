@@ -5,19 +5,16 @@ console.log("text1 says: ", text1);
 let text2 = d3.select("#text2").text();
 console.log("text2 says: ", text2);
 
-// Modify the text of an HTML element
-d3.select(".text1").text("I knew that you believed in Aliens!");
+// // Modify the text of an HTML element
+// d3.select(".text1").text("I knew that you believed in Aliens!");
 
 // // Select an element's child element
 // An object is returned
 let sightsGIS= d3.select(".sightsGIS>a").html();
-console.log("Click to go to Map: ",sightsGIS);
 // // // Capture the child element's href attribute
 let myLinkAnchor = d3.select(".inner>a");
-console.log(myLinkAnchor);
-
 let myLinkAnchorAttribute = myLinkAnchor.attr("href");
-console.log("myLinkAnchorAttribute: " + myLinkAnchorAttribute);
+
 
  // // Change an element's attribute
 // myLinkAnchor.attr("href", "New https here");
@@ -30,8 +27,6 @@ console.log("myLinkAnchorAttribute: " + myLinkAnchorAttribute);
 
 // // // Select all list items, then change their font color
 d3.selectAll("li").style("color", "green");
-
-
 
 // date,
 // thtime,
@@ -55,15 +50,78 @@ let tbodyElem = tableElement.select('tbody');
 let oldUFOrow = tbodyElem.append('tr');
 
 //This is where the old table should go
+//--------------------------------------
 let tbody = d3.select("tbody");
 //define callback function
-
 function processRecord(row){
     let item = tbody.append('tr');
     Object.values(row).forEach(function(thing){
     item.append('td').text(thing);});
 }
 data.forEach (processRecord);
+//----------------------------------------
+
+
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+let clickCount = 0;
+
+// getting a reference to the Yes/No buttons
+let visitors =0;
+
+let button = d3.select("#Alien");
+button.on("click", handleClick);
+console.log("passed click count")
+
+function handleClick() {
+    clickCount++;
+    console.log(`button clicked ${clickCount}`);
+}
+
+    // event.target;
+// clickCount ++;
+// console.log(`clicks ${clickCount}`)
+//Modify the text 
+//d3.select(".text3").text("I know that you believe in Aliens!");
+// }
+
+
+// getting a reference to the Yes button
+let button2 = d3.select("#NoAlien");
+button2.on("click", handleClick);
+
+let button3 = d3.select("#Alien");
+function handleClick2(event) {event.target;}
+button3.on("click", handleClick);
+// getting a reference to the Yes button
+let button4 = d3.select("#NoAlien");
+function handleClick3(event) {event.target;}
+button4.on("click", handleClick);
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+
+let text4 = d3.select("#text4");
+// Modify the text of an HTML element
+d3.select(".text4").text("Be aware: Aliens Exist!");
+
+// // You can also define the click handler inline
+// button.on("click", function(event) {
+//   console.log("Hi, a button was clicked!");
+//   console.log(event.target);
+// });
+
+// // Event handlers are just normal functions that can do anything you want
+// button.on("click", function() {
+//   d3.select(".giphy-me").html("<img src='https://gph.to/2Krfn0w' alt='giphy'>");
+// });
+
+// Input fields can trigger a change event when new text is entered.
+// inputField.on("change", function(event) {
+//   let newText = event.target.value;
+//   console.log(newText);
+// });
+
+
 
 // let oldUFO = ["01-01-2021",
 //     "8:21 pm",
@@ -74,16 +132,6 @@ data.forEach (processRecord);
 //     "black",
 //     5,
 //     "moving fast"];
-
-//add the old cells to the table using a foreach function
-
-// oldUFO.forEach (UFOitem => 
-//     //Add a row to the table (item could be old or new)
-//     oldUFOrow.append('td').text(UFOitem)
-// );
-
-
-
 
 // // Area to add a new UFO
 // let newRow = tableElement.select('tbody').append('tr');
