@@ -13,16 +13,16 @@ let numSpheres=0
 let numDiscs=0
 let numCilinders=0
 let numArrows=0
-let numJoined_objects=0
+let numUnknown=0
 let categorySights = [1,2,3,4,5];
 let ligthAverage = 0
 let lights=0
-let date="01-01-2021"
-let time="8:38 pm"
+let datetime="01-01-2021"
 let city="Tampa"
-let state="Florida"
-let country="USA"
+let state="fl"
+let country="us"
 let shape="sphere"
+let durationMinutes="No time"
 let comment="moving fast"
 
 console.log(`Visitors ${visitorsTotal}`)
@@ -59,7 +59,7 @@ for (let i=0; i < sights.length; i++){
 //iterating up to one element before the last one
 for (let j=0; j < sights.length-1; j++){
     allSights.push[j]
-    console.log(j);}
+    console.log(j)};
 
 //define a function to add a new sight
 console.log(`There were ${sights.length} sights`)
@@ -70,7 +70,7 @@ let addSight= numSights + 1
     console.log(addSight)
 
 console.log("Do you want to report a new sight?")
-newSight(categorySights, objectShape, objectColor, objectLights );
+newSight(categorySights, objectShape, objectCity, objectCountry );
 
 function verify(sawIt){
     let verifySight= sawIt
@@ -124,11 +124,11 @@ function stdev (arr){
 console.log(`The standard deviation of lights in a sight is  ${stdev(categorySights).toFixed(2)}`)
 
 // Java scrip callback function
-let UFO=[{"numSight":1 ,'shapeShape':"sphere",'shapeColor':"black",'shapeLights':1},
-        {"numSight":2 ,'shapeShape':'disc','shapeColor':"grey",'shapeLights':5},
-        {"numSight":3 ,'shapeShape':'cilinder','shapeColor':"sylver",'shapeLights':7},
-        {"numSight":4 ,'shapeShape':'arrow','shapeColor':"gold",'shapeLights':2},
-        {"numSight":5 ,'shapeShape':'joined_objects','shapeColor':"multicolor",'shapeLights':20}];
+let UFO=[{"numSight":1 ,'shapeShape':"fireball",'shapeCity':"Phoenix",'shapeCountry':"us"},
+        {"numSight":2 ,'shapeShape':'circle','shapeCity':"Buffalo",'shapeCountry':"us"},
+        {"numSight":3 ,'shapeShape':'light','shapeCity':"Tampa",'shapeLshapeCountryights':"us"},
+        {"numSight":4 ,'shapeShape':'other','shapeCity':"Las Cruces",'shapeCountry':"us"},
+        {"numSight":5 ,'shapeShape':'unknown','shapeCity':"Valladolid",'shapeCountry':"Mexico"}];
 
 // let shapeUfo = UFO[3];
 
@@ -137,38 +137,38 @@ let UFO=[{"numSight":1 ,'shapeShape':"sphere",'shapeColor':"black",'shapeLights'
 function objectShape(shape){
     console.log(`The shape of the UFO was like a ${shape}`)   
     return }
-function objectColor(color){
-    console.log(`The color of the UFO was ${color}`)  
+function objectCity(city){
+    console.log(`The city was ${city}`)  
     return }
-function objectLights(lights){
-    console.log(`The UFO had ${lights} lights`)   
+function objectCountry(country){
+    console.log(`The country was ${country}`)   
     return }
 
     
-    function countShape(shape){
-    if(shape === 'sphere'){
-        numSpheres = numSpheres++}
-    else if (shape === "disc"){
-        numDiscs = numDiscs++
-    }
-    else if(shape === "cilinder"){
-        numCilinders = numCilinders++}
-    else if(shape === "arrow"){
-        numArrows === numArrows++
-    }
-    else
-        joined_objects === numJoined_objects
-}
+//     function countShape(shape){
+//     if(shape === 'fireball'){
+//         numSpheres = numSpheres++}
+//     else if (shape === "circle"){
+//         numDiscs = numDiscs++
+//     }
+//     else if(shape === "light"){
+//         numCilinders = numCilinders++}
+//     else if(shape === "triangle"){
+//         numArrows === numArrows++
+//     }
+//     else
+//         numUnknown === numUnknown++
+// }
 
-    console.log(`moving fast`)
+    // console.log(comment)
 
 //iterate on the UFO most common characteristics
 function commonUfos(UFO){
     for (let x=0; x < UFO.length; x++){ 
         console.log(`Category sight: ${categorySights[x]}`)  
         objectShape(UFO[x].shapeShape); 
-        objectColor(UFO[x].shapeColor);
-        objectLights(UFO[x].shapeLights);} 
+        objectCity(UFO[x].shapeCity);
+        objectCountry(UFO[x].shapeCountry);} 
     }
 
     commonUfos(UFO)
@@ -182,10 +182,10 @@ function commonUfos(UFO){
         objectShape(shape)
         console.log(`What color was the UFO? choose black, grey, sylver, gold, or multicolor`)
         color = "black"
-        objectColor(color)
+        objectCity(city)
         console.log(`How many lights did the UFO had?`)
         lights=1
-        objectLights(lights)
+        objectCountry(country)
         
         let sawIt = false
         verify(sawIt)

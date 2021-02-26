@@ -31,6 +31,8 @@ console.log("myLinkAnchorAttribute: " + myLinkAnchorAttribute);
 // // // Select all list items, then change their font color
 d3.selectAll("li").style("color", "green");
 
+
+
 // date,
 // thtime,
 // city,
@@ -46,56 +48,60 @@ d3.select('.table')
 //Assign this table to a D3 element for manipulation
 let tableElement = d3.select('.table')
 //change the table format to something more attractive
-tableElement.classed('table-stripped', true)
+tableElement.classed('table-striped', true)
 //select the body of the html table
 let tbodyElem = tableElement.select('tbody');
-
 // Area to add old UFOs
 let oldUFOrow = tbodyElem.append('tr');
-//This is where the old table should be
-let oldUFO = ["01-01-2021",
-    "8:21 pm",
-    "Houston",
-    "Texas",
-    "USA",
-    "sphere",
-    "black",
-    5,
-    "moving fast"];
+
+//This is where the old table should go
+let tbody = d3.select("tbody");
+//define callback function
+
+function processRecord(row){
+    let item = tbody.append('tr');
+    Object.values(row).forEach(function(thing){
+    item.append('td').text(thing);});
+}
+data.forEach (processRecord);
+
+// let oldUFO = ["01-01-2021",
+//     "8:21 pm",
+//     "Houston",
+//     "Texas",
+//     "USA",
+//     "sphere",
+//     "black",
+//     5,
+//     "moving fast"];
 
 //add the old cells to the table using a foreach function
 
-oldUFO.forEach (UFOitem => 
-    //Add a row to the table (item could be old or new)
-    oldUFOrow.append('td').text(UFOitem)
-);
+// oldUFO.forEach (UFOitem => 
+//     //Add a row to the table (item could be old or new)
+//     oldUFOrow.append('td').text(UFOitem)
+// );
 
-// Area to add a new UFO
-let newRow = tableElement.select('tbody').append('tr');
 
-let newUFO = ["01-01-2021","8:21 pm",
-    "Tampa",
-    "Florida",
-    "USA",
-    "sphere",
-    "black",
-    21,
-    "moving fast"];
 
-for (let i=0; i<9; i++){
-    newRow.append('td').text(newUFO[i]);
-}
 
-// newUFO.forEach (addUFO)
+// // Area to add a new UFO
+// let newRow = tableElement.select('tbody').append('tr');
 
-    // newRow.append('td').text(newUFO[1])
-    // newRow.append('td').text(newUFO[2])
-    // newRow.append('td').text(newUFO[3])
-    // newRow.append('td').text(newUFO[4])
-    // newRow.append('td').text(newUFO[5])
-    // newRow.append('td').text(newUFO[6])
-    // newRow.append('td').text(newUFO[7])
-    // newRow.append('td').text(newUFO[8])
+// let newUFO = ["01-01-2021","8:21 pm",
+//     "Tampa",
+//     "Florida",
+//     "USA",
+//     "sphere",
+//     "black",
+//     21,
+//     "moving fast"];
+
+// for (let i=0; i<9; i++){
+//     newRow.append('td').text(newUFO[i]);
+// }
+
+
 
 // // // Create a list new element
 // let li1 = d3.select("ul").append("li");
