@@ -9,32 +9,38 @@ let visitorsTotal = parseInt(previousVisitors) + visitorsToday
 let believeAliens = true;
 let sights = [1,2,3]
 let verifiedSight = true
+let numSpheres=0
+let numDiscs=0
+let numCilinders=0
+let numArrows=0
+let numJoined_objects=0
+let categorySights = [1,2,3,4,5];
+let ligthAverage = 0
+let lights=0
+let date="01-01-2021"
+let time="8:38 pm"
+let city="Tampa"
+let state="Florida"
+let country="USA"
+let shape="sphere"
+let comment="moving fast"
 
 console.log(`Visitors ${visitorsTotal}`)
-if (believeAliens){
-    console.log(`I know that you believe in Aliens `)
-}
-else{
-    console.log(`Be aware: Aliens Exist!`)};
-if (visitorsToday === 0){
-    console.log('Bummer')
-}
-if(previousVisitors !== '1001') {
-    console.log('Somebody visited!')
-}
-if(visitorsToday > parseInt(previousVisitors)){
-    console.log('So many visitors today!')}
-if(visitorsToday !== 0 && believeAliens){
-    console.log(`Join the club: ${visitorsTotal} believers and counting!`)}
-if (visitorsTotal === 20000){
-    console.log(`${visitorsTotal} visitors milestone!`)}
-    else if (visitorsToday >0){ 
-    console.log(`approaching our next visitor's milestone`)}
-    else{
-    console.log(`We surpassed our 20000 visitors!`)}
+if (believeAliens){console.log(`I knew that you believed in Aliens `)}
+else{console.log(`Be aware: Aliens Exist!`)};
 
+if (visitorsToday === 0){console.log('Bummer')}
+if(previousVisitors !== '1001') {console.log('Somebody visited on:  date!')}
 
-    let allSights=[]
+if(visitorsToday > parseInt(previousVisitors)){console.log('So many visitors today!')}
+if(visitorsToday !== 0 && believeAliens){console.log(`Join the club: ${visitorsTotal} believers and counting!`)}
+
+if (visitorsTotal === 20000){console.log(`${visitorsTotal} visitors milestone!`)}
+else if (visitorsToday >0){console.log(`approaching our next visitor's milestone`)}
+else{console.log(`We surpassed our 20000 visitors!`)}
+
+//Here we are going to put the database
+let allSights=[]
 
 if (verifiedSight)
 // Add a new sight if verified
@@ -47,14 +53,13 @@ console.log(`My favorite sight is # ${sights.slice(1,2)}`)
 
 //iterate over sights
 for (let i=0; i < sights.length; i++){
-    console.log(sights[i])
+    console.log(`Sight number: ${sights[i]}`)
 }
 
 //iterating up to one element before the last one
 for (let j=0; j < sights.length-1; j++){
     allSights.push[j]
-    console.log(j);
-}
+    console.log(j);}
 
 //define a function to add a new sight
 console.log(`There were ${sights.length} sights`)
@@ -64,15 +69,8 @@ console.log(`New sight reported. There are now ${numSights+1} in the database`)
 let addSight= numSights + 1
     console.log(addSight)
 
-newSight();
-
-function newSight(){        
-    sights.push(addSight)
-    console.log("Alert New sight reported!");
-    let sawIt = false
-    verify(sawIt)
-    return sawIt
-}
+console.log("Do you want to report a new sight?")
+newSight(categorySights, objectShape, objectColor, objectLights );
 
 function verify(sawIt){
     let verifySight= sawIt
@@ -83,31 +81,25 @@ function verify(sawIt){
     console.log("The sight is not verified")
     sawIt = false
     }
-    return
-}
+    return}
 
 arrayloop(sights)
 
 function arrayloop(sights){
     for (let s=0; s < sights.length; s++)
     console.log(sights[s])
-    return sights
-}
+    return sights}
 
-
-let categorySights = [1,2,3,4,5,6,7,8,9,12,11];
-let ligthAverage = 0
-lightAverage=avg(categorySights);
+lightsAverage=avg(categorySights);
 
 function avg (arr){
     let total = 0;
     for (let c=0; c < arr.length; c++){
          total += arr[c];}  //cumulative number
         let meanValue = total/arr.length //calculate average
-        return meanValue; //return meanValue
-}
+        return meanValue;} //return meanValue}
 
-console.log(`the average # of lights in sights is: ${Math.round(lightAverage)}`)
+console.log(`the average # of lights in sights is: ${Math.round(lightsAverage)}`)
 
 function variance(arr){
     let  vari =0;
@@ -120,7 +112,7 @@ function variance(arr){
 }
 
 let variancelights = 0
-varianceLights = variance(categorySights,lightAverage)
+varianceLights = variance(categorySights,lightsAverage)
 console.log(`The variance of lights in a sight is # ${varianceLights.toFixed(2)}`)
 
 function stdev (arr){
@@ -136,37 +128,70 @@ let UFO=[{"numSight":1 ,'shapeShape':"sphere",'shapeColor':"black",'shapeLights'
         {"numSight":2 ,'shapeShape':'disc','shapeColor':"grey",'shapeLights':5},
         {"numSight":3 ,'shapeShape':'cilinder','shapeColor':"sylver",'shapeLights':7},
         {"numSight":4 ,'shapeShape':'arrow','shapeColor':"gold",'shapeLights':2},
-        {"numSight":5 ,'shapeShape':'joined_objects','shapeColor':"blue",'shapeLights':20}];
+        {"numSight":5 ,'shapeShape':'joined_objects','shapeColor':"multicolor",'shapeLights':20}];
 
 // let shapeUfo = UFO[3];
 
 // console.log(` What is type ${shapeUfo}`)
 
-function objectShape(shape,newSight){
-    console.log(`The shape of the UFO is type ${shape}`)
-    newSight()
-    return 
-}
-function objectColor(color,newSight){
-    console.log(`The color of the UFO is ${color}`)
-    newSight()
-    return 
-}
-function objectLights(lights,newSight){
-    console.log(`The UFO has ${lights} lights`)
-    newSight()
-    return 
-}
-function describeObject(){
-    console.log(`moving fast`)
+function objectShape(shape){
+    console.log(`The shape of the UFO was like a ${shape}`)   
+    return }
+function objectColor(color){
+    console.log(`The color of the UFO was ${color}`)  
+    return }
+function objectLights(lights){
+    console.log(`The UFO had ${lights} lights`)   
+    return }
+
+    
+    function countShape(shape){
+    if(shape === 'sphere'){
+        numSpheres = numSpheres++}
+    else if (shape === "disc"){
+        numDiscs = numDiscs++
+    }
+    else if(shape === "cilinder"){
+        numCilinders = numCilinders++}
+    else if(shape === "arrow"){
+        numArrows === numArrows++
+    }
+    else
+        joined_objects === numJoined_objects
 }
 
-//iterate on the UFO
-for (let x=0; x < UFO.length; x++){
-    if (UFO[x].numSight === 1){
-        objectShape(UFO[x].shapeShape,describeObject); 
-        objectColor(UFO[x].shapeColor,describeObject);
-        objectLights(UFO[x].shapeLights,describeObject)} 
-    else{
-        console.log(`UFO ${UFO[x].numSight}  is different`)}
+    console.log(`moving fast`)
+
+//iterate on the UFO most common characteristics
+function commonUfos(UFO){
+    for (let x=0; x < UFO.length; x++){ 
+        console.log(`Category sight: ${categorySights[x]}`)  
+        objectShape(UFO[x].shapeShape); 
+        objectColor(UFO[x].shapeColor);
+        objectLights(UFO[x].shapeLights);} 
     }
+
+    commonUfos(UFO)
+
+    function newSight(categorySights, objectShape, objectColor, objectLights ){        
+        sights.push()
+        console.log("Alert New sight reported!");
+        for (var sadd=0; sadd < categorySights.length; sadd++)
+        console.log(`What shape was the UFO? choose sphere, disc, cilinder, arrow, or joined_objects`)
+        shape = "sphere"
+        objectShape(shape)
+        console.log(`What color was the UFO? choose black, grey, sylver, gold, or multicolor`)
+        color = "black"
+        objectColor(color)
+        console.log(`How many lights did the UFO had?`)
+        lights=1
+        objectLights(lights)
+        
+        let sawIt = false
+        verify(sawIt)
+        return sawIt
+    }
+
+
+
+
