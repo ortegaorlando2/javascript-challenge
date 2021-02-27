@@ -76,7 +76,7 @@ button.on("click", () => {
     console.log(`Visitors ${visitorsTotal}`)
 });
 
-console.log("passed click count")
+
 
 clickCount2=0
 let button2 = d3.select("#NoAlien");
@@ -107,11 +107,70 @@ button4.on("click", () => {
 });
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
+// button on click retrieve date to search
+
+let text = d3.select("#text");
+let output = d3.select(".output");
+// let output = d3.select(".output")
+
+text.on("change", handleChange);
+
+function handleChange(event) {
+    // grab the value of the input field
+    let inputText = event.target.value;
+    console.log(inputText)
+    // clear the existing output
+    // @TODO: YOUR CODE HERE
+    event.target.value = '';
+  
+    // Set the output text to the reversed input string
+    output.text(reversedInput);
+}
+  
+
+// ***************THIS******************************
+
+// d3.selectAll("button").on("click", function() {
+//     // What will be logged out? What is `this` in this case?
+//     console.log(this);
+//     // Answer: It will console log the `button` element.
+//   });
+
+// d3.selectAll("li").on("click", function() {
+//     // you can select the element just like any other selection
+//     let listItem = d3.select(this);
+//     listItem.style("color", "blue");
+  
+//     let listItemText = listItem.text();
+//     console.log(listItemText);
+//   });
 
 
-let text4 = d3.select("#text4");
-// Modify the text of an HTML element
-d3.select(".text4").text("Be aware: Aliens Exist!");
+
+// button5.on("click", () => {
+//     clickCount5++;
+//     if(clickCount5 === 1){visitorsTotal ++}
+//     console.log(`${visitorsTotal}`)
+// });
+
+// inputfield.on("change", function(event) {
+//     let newText = event.target.value;
+//     console.log(newText);
+// });
+
+
+// function handleChange(event) {
+//     let believerInput = event.target.value;
+//     console.log(believerInput);
+//     event.target.value = "";
+//     output.text(`UFO on ${believerInput}`);
+// };
+
+console.log("passed click count")
+
+// let text4 = d3.select("#text4");
+// // Modify the text of an HTML element
+// d3.select(".text4").text("Be aware: Aliens Exist!");
 
 // // You can also define the click handler inline
 // button.on("click", function(event) {

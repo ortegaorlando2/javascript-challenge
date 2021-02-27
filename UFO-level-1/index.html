@@ -9,50 +9,89 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <link rel="stylesheet" href="static/css/style.css"> -->
 </head>
+<style>
+    body {
+      background-color: rgb(127, 72, 190);
+    }
+</style>
+
+
 
 <body>
     <nav>
-        <h2>Look for your UFO here</h2>
+        <h1>Look for your UFO here</h1>
         <div class="text1">We collect data about UFOs</div>
         <div id="text2">You can find our data collection below</div>
-        <div class="sightsGIS">
+        <div class="sightsGIS" style="background-color: rgb(18, 15, 20)">
           <a href="https://www.arcgis.com/apps/webappviewer/index.html?id=ddda71d5211f47e782b12f3f8d06246e">Map of reported UFOs</a>
         </div>
       
         <div class="deeplink">
           <div class="outer">
-            <div class="inner">
+            <div class="inner" style="background-color: rgb(18, 15, 20)">
               <a href="https://en.wikipedia.org/wiki/List_of_reported_UFO_sightings">Wikipedia List of UFOs</a>
             </div>
           </div>
         </div>
     
         <div class="catch1">
+            <div class="col-md-offset-4 col-md-4">
             <h3>Do you believe in Aliens?</h3>
             <button id="Alien">Yes</button>
             <button id="NoAlien">No</button>  
             <div class="text3">?&nbsp</div>
+            </div>
             <!-- <input id="input-field" type="text"> -->
         </div>
         
 
         <div class="catch2">
-            <h3>Do you want to report a UFO?</h3>
-            <button id="newUFO">Yes</button>
-            <button id="NoUFO">No</button>
-            <div class="text4">&nbsp</div>
+            <div class="col-md-offset-4 col-md-4">
+                <h3>Do you want to report a UFO?</h3>
+                <button type="button" id="newUFO">Yes</button>
+                <button type="button" id="NoUFO">No</button>
+                <div class="text4">&nbsp</div>
+            </div>
             <!-- <input id="input-field" type="text"> -->
         </div>
-        <div class="catch"></div>
+        
 
-
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
+        <ul style="background-color: rgb(18, 15, 20)">
+            <h1>Search UFO by date</h1>
+            <div class="container">
+                <div class="row">
+                <div class="col-md-12">
+                    <form id="form"></form>
+                        <div class="form-group">
+                            <h3>Enter Date here (MM/DD/YYYY)</h3>
+                            <!-- <button id="dateUFO">CLick to Enter</button> -->
+                            <label for="text">Input Date </label>
+                            <!-- <input id="input-field" type="text"> -->
+                            <input class="form-control" id="patient-form-input" 
+                            type="text" id="text" name="text-input" placeholder="AB-">
+                            <!-- <input id="input-field" type="text"> -->
+                            </div>
+                        <button id="button" type="button" class="btn btn-default" style="background-color: rgb(212, 18, 93)">Enter</button>
+                    </form>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-md-12">
+                    <h1>Filtered Data Summary</h1>
+                    <ul class="summary"></ul>
+                </div>
+                </div>
+            </div>
+            <h4 class="output"></h4>
+            <div>
+                <h4>Coming Soon</h4>
+                <h3>Search UFO by Country</h3>
+                <h3>Search UFO by City and Shape</h3>
+                <h3>Search UFO by Duration</h3>
+            </div>
         </ul>
 
-        <div class="container">
+        <div class="container" style="background-color: rgb(136, 133, 138)">
             <div class="row">
               <div class="col-md-12">
                 <!-- UFO table-->
@@ -75,10 +114,7 @@
                 </table>
               </div>
             </div>
-          </div>
-
-
-
+        </div>
 
     </nav>    
 </body>
