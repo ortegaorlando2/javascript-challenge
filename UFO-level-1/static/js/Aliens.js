@@ -15,28 +15,8 @@ let sightsGIS= d3.select(".sightsGIS>a").html();
 let myLinkAnchor = d3.select(".inner>a");
 let myLinkAnchorAttribute = myLinkAnchor.attr("href");
 
-
- // // Change an element's attribute
-// myLinkAnchor.attr("href", "New https here");
-
-// // // Use chaining to join methods
-
-// d3.select(".my-link>a") // returns a reference to the anchor tag
-//   .attr("href", "https://nytimes.com") // sets href of anchor tag and returns reference of anchor tag
-//   .text("Now this is a link to the NYT!!"); // sets text of anchor tag
-
-// // // Select all list items, then change their font color
 d3.selectAll("li").style("color", "green");
 
-// date,
-// thtime,
-// city,
-// state,
-// country,
-// shape,
-// color,
-// lights,
-// comment
 
 //select the table inside html
 d3.select('.table')
@@ -76,8 +56,6 @@ button.on("click", () => {
     console.log(`Visitors ${visitorsTotal}`)
 });
 
-
-
 clickCount2=0
 let button2 = d3.select("#NoAlien");
 button2.on("click", () => {
@@ -105,30 +83,80 @@ button4.on("click", () => {
     console.log(`button clicked ${clickCount4}`);
     console.log(`Visitors ${visitorsTotal}`)
 });
+
+
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-// button on click retrieve date to search
+// // button on click retrieve date to search
 
-let text = d3.select("#text");
-let output = d3.select(".output");
-// let output = d3.select(".output")
+// let text = d3.select("#text");
+// let output = d3.select(".output");
+// // let output = d3.select(".output")
+// text.on("change", handleChange);
 
-text.on("change", handleChange);
-
-function handleChange(event) {
-    // grab the value of the input field
-    let inputText = event.target.value;
-    console.log(inputText)
-    // clear the existing output
-    // @TODO: YOUR CODE HERE
-    event.target.value = '';
+// function handleChange(event) {
+//     // grab the value of the input field
+//     let inputText = event.target.value;
+//     console.log(inputText)
+//     // clear the existing output
+//     // @TODO: YOUR CODE HERE
+//     event.target.value = '';
   
-    // Set the output text to the reversed input string
-    output.text(reversedInput);
-}
+//     // Set the output text to the reversed input string
+//     output.text(reversedInput);
+// }
+
+
+// ~~~~~~~~~~~~~~~~FORMS~~~~~~~~~~~~~~~~~~~~
+
+// defining variables variable
+var UFOdatabase = data;
+var button101 = d3.select("#button101");
+var form = d3.select("#form");
+
+
+// Create event handlers 
+button101.on("click", runEnter);
+form.on("submit",runEnter);
+
+
+// Complete the event handler function for the form
+function runEnter() {
+  // Prevent the page from refreshing
   
+  d3.event.preventDefault(); 
+  console.log("passed to forms") 
+  // Select the input element and get the raw HTML node
+  var inputHere = d3.select("#UFOSearcher");
+  // Get the value property of the input element
+  var inputValue = inputHere.property("value");
+
+  console.log(inputValue);
+  console.log(UFOdatabase);
+
+  var filteredData = UFOdatabase.filter(UFOinstance => UFOinstance.date === inputValue);
+
+  console.log(filteredData);
+
+  // BONUS: Calculate summary statistics for the age field of the filtered data
+
+  // First, create an array with just the date values
+  var UFOdate = filteredData.map(UFOinstance => UFOinstance.age);
+  var list = d3.select(".summary");
+
+  // remove any children from the list to
+  list.html("");
+
+};
+
+
+
+
 
 // ***************THIS******************************
+
+
+
 
 // d3.selectAll("button").on("click", function() {
 //     // What will be logged out? What is `this` in this case?
@@ -166,7 +194,7 @@ function handleChange(event) {
 //     output.text(`UFO on ${believerInput}`);
 // };
 
-console.log("passed click count")
+
 
 // let text4 = d3.select("#text4");
 // // Modify the text of an HTML element

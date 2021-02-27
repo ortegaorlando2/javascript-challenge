@@ -25,10 +25,6 @@ let shape="sphere"
 let durationMinutes="No time"
 let comment="moving fast"
 
-console.log(`Visitors ${visitorsTotal}`)
-if (believeAliens){console.log(`I knew that you believed in Aliens `)}
-else{console.log(`Be aware: Aliens Exist!`)};
-
 if (visitorsToday === 0){console.log('Bummer')}
 if(previousVisitors !== '1001') {console.log('Somebody visited on:  date!')}
 

@@ -9,13 +9,7 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <link rel="stylesheet" href="static/css/style.css"> -->
 </head>
-<style>
-    body {
-      background-color: rgb(127, 72, 190);
-    }
-</style>
-
-
+<style>body {background-color: rgb(127, 72, 190);}</style>
 
 <body>
     <nav>
@@ -41,7 +35,6 @@
             <button id="NoAlien">No</button>  
             <div class="text3">?&nbsp</div>
             </div>
-            <!-- <input id="input-field" type="text"> -->
         </div>
         
 
@@ -52,7 +45,6 @@
                 <button type="button" id="NoUFO">No</button>
                 <div class="text4">&nbsp</div>
             </div>
-            <!-- <input id="input-field" type="text"> -->
         </div>
         
 
@@ -63,23 +55,23 @@
                 <div class="col-md-12">
                     <form id="form"></form>
                         <div class="form-group">
-                            <h3>Enter Date here (MM/DD/YYYY)</h3>
+                            <h3>Enter Date here (M/DD/YYYY)</h3>
                             <!-- <button id="dateUFO">CLick to Enter</button> -->
-                            <label for="text">Input Date </label>
+                            <label for="text101">Input Date </label>
                             <!-- <input id="input-field" type="text"> -->
-                            <input class="form-control" id="patient-form-input" 
-                            type="text" id="text" name="text-input" placeholder="AB-">
+                            <input class="form-control" id="UFOSearcher" 
+                            type="text" name="text-input" placeholder="***replace***">
                             <!-- <input id="input-field" type="text"> -->
                             </div>
-                        <button id="button" type="button" class="btn btn-default" style="background-color: rgb(212, 18, 93)">Enter</button>
+                        <button id="button101" type="button" class="btn btn-default" style="background-color: rgb(212, 18, 93)">Enter</button>
                     </form>
                 </div>
                 </div>
                 <div class="row">
-                <div class="col-md-12">
-                    <h1>Filtered Data Summary</h1>
-                    <ul class="summary"></ul>
-                </div>
+                    <div class="col-md-12">
+                        <h1>Filtered Data Summary</h1>
+                        <ul class="summary"></ul>
+                    </div>
                 </div>
             </div>
             <h4 class="output"></h4>
