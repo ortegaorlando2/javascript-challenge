@@ -69,33 +69,42 @@ let clickCount = 0;
 let visitors =0;
 
 let button = d3.select("#Alien");
-button.on("click", handleClick);
+button.on("click", () => {
+    clickCount++;
+    if(clickCount === 1){visitorsTotal ++}
+    console.log(`button clicked ${clickCount}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
+
 console.log("passed click count")
 
-function handleClick() {
-    clickCount++;
-    console.log(`button clicked ${clickCount}`);
-}
-
-    // event.target;
-// clickCount ++;
-// console.log(`clicks ${clickCount}`)
-//Modify the text 
-//d3.select(".text3").text("I know that you believe in Aliens!");
-// }
-
-
-// getting a reference to the Yes button
+clickCount2=0
 let button2 = d3.select("#NoAlien");
-button2.on("click", handleClick);
+button2.on("click", () => {
+    clickCount2++;
+    if(clickCount2 === 1){visitorsTotal ++}
+    console.log(`button clicked ${clickCount2}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
 
-let button3 = d3.select("#Alien");
-function handleClick2(event) {event.target;}
-button3.on("click", handleClick);
+clickCount3=0
 // getting a reference to the Yes button
-let button4 = d3.select("#NoAlien");
-function handleClick3(event) {event.target;}
-button4.on("click", handleClick);
+let button3 = d3.select("#newUFO");
+button3.on("click", () => {
+    clickCount3++;
+    if(clickCount3 === 1){visitorsTotal ++}
+    console.log(`button clicked ${clickCount3}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
+
+clickCount4=0
+let button4 = d3.select("#NoUFO");
+button4.on("click", () => {
+    clickCount4++;
+    if(clickCount4 === 1){visitorsTotal ++}
+    console.log(`button clicked ${clickCount4}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 
