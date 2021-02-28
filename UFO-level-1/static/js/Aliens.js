@@ -112,27 +112,34 @@ button4.on("click", () => {
 // Assign the data from `data.js` to a descriptive variable
 let UFOcase = data;
 let buttonA = d3.select("#buttonA");
+let buttonB = d3.select("#buttonB");
+let buttonC = d3.select("#buttonC");
+let buttonD = d3.select("#buttonD");
 let form = d3.select("#form");
 
 // Create event handlers 
 buttonA.on("click", runEnter);
 form.on("submit",runEnter);
 
+buttonB.on("click", runEnter)
+form.on("submit",runEnter);
+
+buttonC.on("click", runEnter);
+form.on("submit",runEnter);
+
+buttonD.on("click", runEnter);
+form.on("submit",runEnter);
+
 // Complete the event handler function for the form
 function runEnter(event) {
 
   // Prevent the page from refreshing
-  event.preventDefault();
-  
+  event.preventDefault();  
   // Select the input element and get the raw HTML node
-  let inputElement = d3.select("#UFOSearcher");
-
- 
+  let inputElement = d3.select("#UFOSearcher"); 
   // Get the value property of the input element
   let inputValue = inputElement.property("value");
   console.log(`values ${inputValue}`)
-
-
  
 console.log(UFOcase);
 
@@ -154,7 +161,16 @@ console.log(UFOcase);
   console.log(inputValue);
 
   let filteredData = UFOcase.filter(theones => 
+    theones.date === inputValue); 
+
+  let filteredData = UFOcase.filter(theones => 
     theones.city === inputValue);
+
+  let filteredData = UFOcase.filter(theones => 
+    theones.state === inputValue); 
+    
+  let filteredData = UFOcase.filter(theones => 
+    theones.shape === inputValue);
 
   console.log(filteredData);
 
