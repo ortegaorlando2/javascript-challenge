@@ -115,33 +115,35 @@ let buttonA = d3.select("#buttonA");
 let buttonB = d3.select("#buttonB");
 let buttonC = d3.select("#buttonC");
 let buttonD = d3.select("#buttonD");
-let form = d3.select("#form");
+let form1 = d3.select("#form1");
+let form2 = d3.select("#form2");
+let form3 = d3.select("#form3");
+let form4 = d3.select("#form4");
+
+for (let i=1; i < length.UFOcase; i++){
+    console.log(UFOcase.datetime).text()}
 
 // Create event handlers 
-buttonA.on("click", runEnter);
-form.on("submit",runEnter);
-
-buttonB.on("click", runEnter)
-form.on("submit",runEnter);
-
-buttonC.on("click", runEnter);
-form.on("submit",runEnter);
-
-buttonD.on("click", runEnter);
-form.on("submit",runEnter);
+buttonA.on("click", runEnter1);
+form1.on("submit",runEnter1);
+buttonB.on("click", runEnter2)
+form2.on("submit", runEnter2);
+buttonC.on("click", runEnter3);
+form3.on("submit",runEnter3);
+buttonD.on("click", runEnter4);
+form4.on("submit",runEnter4);
 
 // Complete the event handler function for the form
-function runEnter(event) {
-
+function runEnter1(event) {
   // Prevent the page from refreshing
   event.preventDefault();  
   // Select the input element and get the raw HTML node
   let inputElement = d3.select("#UFOSearcher"); 
   // Get the value property of the input element
   let inputValue = inputElement.property("value");
-  console.log(`values ${inputValue}`)
+  console.log(`value ${inputValue}`)
  
-console.log(UFOcase);
+
 
 //   let n = inputValue.getMonth()+
 //             inputValue.getDate()+
@@ -160,26 +162,71 @@ console.log(UFOcase);
 
   console.log(inputValue);
 
-  let filteredData = UFOcase.filter(theones => 
+  let filteredData1 = UFOcase.filter(theones => 
     theones.date === inputValue); 
 
-  let filteredData = UFOcase.filter(theones => 
-    theones.city === inputValue);
-
-  let filteredData = UFOcase.filter(theones => 
-    theones.state === inputValue); 
-    
-  let filteredData = UFOcase.filter(theones => 
-    theones.shape === inputValue);
-
-  console.log(filteredData);
-
+  console.log(filteredData1);
 }
 
+function runEnter2(event) {
+    // Prevent the page from refreshing
+    event.preventDefault();  
+    // Select the input element and get the raw HTML node
+    let inputElement = d3.select("#UFOCity"); 
+    // Get the value property of the input element
+    let inputValue = inputElement.property("value");
+    console.log(`values ${inputValue}`)
+   
+  console.log(inputValue);
 
+    let filteredData2 = UFOcase.filter(theones => 
+      theones.city === inputValue);
 
+    console.log(filteredData2);  
+  }
 
+  function runEnter3(event) {
+    // Prevent the page from refreshing
+    event.preventDefault();  
+    // Select the input element and get the raw HTML node
+    let inputElement = d3.select("#UFOState"); 
+    // Get the value property of the input element
+    let inputValue = inputElement.property("value");
+    console.log(`values ${inputValue}`)
+   
+  console.log(inputValue);
+  
+    let filteredData3 = UFOcase.filter(theones => 
+      theones.state === inputValue); 
+     
+    console.log(filteredData3); 
+  }
 
+  function runEnter4(event) {
+    // Prevent the page from refreshing
+    event.preventDefault();  
+    // Select the input element and get the raw HTML node
+    let inputElement = d3.select("#UFOShape"); 
+    // Get the value property of the input element
+    let inputValue = inputElement.property("value");
+    console.log(`values ${inputValue}`)
+   
+  console.log(inputValue);
+     
+    let filteredData4 = UFOcase.filter(theones => 
+      theones.shape === inputValue);   
+
+    console.log(filteredData4);    
+  }
+
+//   let tbody2 = d3.select("tbody");
+//   //define callback function
+//   function selectRecords(row){
+//       let item = tbody2.append('tr');
+//       Object.values(row).forEach(function(thing){
+//       item.append('td').text(thing);});
+//   }
+//   data.forEach (selectRecords);
 // ***************THIS******************************
 
 
