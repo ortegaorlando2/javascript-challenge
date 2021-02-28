@@ -109,45 +109,56 @@ button4.on("click", () => {
 
 // ~~~~~~~~~~~~~~~~FORMS~~~~~~~~~~~~~~~~~~~~
 
-// defining variables variable
-var UFOdatabase = data;
-var button101 = d3.select("#button101");
-var form = d3.select("#form");
-
+// Assign the data from `data.js` to a descriptive variable
+let UFOcase = data;
+let buttonA = d3.select("#buttonA");
+let form = d3.select("#form");
 
 // Create event handlers 
-button101.on("click", runEnter);
+buttonA.on("click", runEnter);
 form.on("submit",runEnter);
 
-
 // Complete the event handler function for the form
-function runEnter() {
+function runEnter(event) {
+
   // Prevent the page from refreshing
+  event.preventDefault();
   
-  d3.event.preventDefault(); 
-  console.log("passed to forms") 
   // Select the input element and get the raw HTML node
-  var inputHere = d3.select("#UFOSearcher");
+  let inputElement = d3.select("#UFOSearcher");
+
+ 
   // Get the value property of the input element
-  var inputValue = inputHere.property("value");
+  let inputValue = inputElement.property("value");
+  console.log(`values ${inputValue}`)
+
+
+ 
+console.log(UFOcase);
+
+//   let n = inputValue.getMonth()+
+//             inputValue.getDate()+
+//             inputValue.getFullYear()
+
+
+
+// GetFormattedDate()
+// function GetFormattedDate() {
+//     var todayTime = new Date();
+//     var month = format(todayTime .getMonth() + 1);
+//     var day = format(todayTime .getDate());
+//     var year = format(todayTime .getFullYear());
+//     return month + "/" + day + "/" + year;
+// }
 
   console.log(inputValue);
-  console.log(UFOdatabase);
 
-  var filteredData = UFOdatabase.filter(UFOinstance => UFOinstance.date === inputValue);
+  let filteredData = UFOcase.filter(theones => 
+    theones.city === inputValue);
 
   console.log(filteredData);
 
-  // BONUS: Calculate summary statistics for the age field of the filtered data
-
-  // First, create an array with just the date values
-  var UFOdate = filteredData.map(UFOinstance => UFOinstance.age);
-  var list = d3.select(".summary");
-
-  // remove any children from the list to
-  list.html("");
-
-};
+}
 
 
 
