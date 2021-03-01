@@ -141,8 +141,27 @@ function runEnter1(event) {
   let inputElement = d3.select("#UFOSearcher"); 
   // Get the value property of the input element
   let inputValue = inputElement.property("value");
-  console.log(`value ${inputValue}`)
- 
+  inputValuestrg = inputValue.toString();
+  compare = dmy(inputValuestrg)
+
+
+  function dmy(inputValuestrg) {
+    var str = inputValuestrg
+    var y = str.substring(0,4);
+    var m = str.substring(5,7);
+      if (m.substring(0,1) === '0')
+        {m=m.substring(1,2);}
+    var d = str.substring(8,10);
+      if (d.substring(0,1) === '0')
+        {d=d.substring(1,2);}
+
+    var compare = m+'/'+d+'/'+y 
+    return compare
+  }
+
+
+  console.log(`value ${inputValuestrg}`)
+  console.log(`compare ${compare}`)
 
 
 //   let n = inputValue.getMonth()+
@@ -163,7 +182,7 @@ function runEnter1(event) {
   console.log(inputValue);
 
   let filteredData1 = UFOcase.filter(theones => 
-    theones.date === inputValue); 
+    theones.datetime === compare); 
 
   console.log(filteredData1);
 }
@@ -182,7 +201,22 @@ function runEnter2(event) {
     let filteredData2 = UFOcase.filter(theones => 
       theones.city === inputValue);
 
-    console.log(filteredData2);  
+    console.log(filteredData2); 
+    
+    d3.select('#selection')
+    //Assign this table to a D3 element for manipulation
+    let tableElement2 = d3.select('#selection')
+    //change the table format to something more attractive
+    tableElement2.classed('table-striped', true)
+    //select the body of the html table
+    tableElement2.select('tbody2').append('tr');
+
+  //define callback function
+  function selectRecords(){
+      let item = tbody2.append('tr');
+      item.forEach(item.append['tr']);
+  }
+    filteredData2.forEach (selectRecords);
   }
 
   function runEnter3(event) {

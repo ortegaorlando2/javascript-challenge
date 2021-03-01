@@ -55,13 +55,15 @@
                 <div class="col-md-12">
                     <form id="form1"></form>
                         <div class="form-group">
-                            <h3>Enter Date here (YYYY-MM-DD)</h3>
+                            <h3>Enter Date here (MM/DD/YYYY)</h3>
                             <label for="text101">Input Date </label>
-                            <input class="form-control" id="UFOSearcher" name="text-input" type="date" placeholder="1/1/2010">
+                            <input class="form-control" id="UFOSearcher" type="date" name="text-input" placeholder="MM/DD/YYYY"
+                            />
                             <!-- <input id="input-field" type="text"> -->
                         </div>
                         <button id="buttonA" type="button" class="btn btn-default" style="background-color: rgb(212, 18, 93)">Enter</button>
                     </form>
+
                 </div>
                 </div>
                 <hr>
@@ -117,8 +119,10 @@
                         <ul class="summary"></ul>
                     </div>
                 </div>
+                <tbody2 #selection></tbody2>
                 </div>
             <h4 class="output"></h4>
+
 
         </ul>
 
@@ -130,7 +134,7 @@
                 <table class="UFO table">
                   <thead>
                     <tr>
-                        <th>date</th>
+                        <th>datetime</th>
                         <!-- <th>time</th> -->
                         <th>city</th>
                         <th>state</th>

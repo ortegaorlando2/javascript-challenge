@@ -155,7 +155,7 @@ function objectCountry(country){
 //     else
 //         numUnknown === numUnknown++
 // }
-}
+
     // console.log(comment)
 
 //iterate on the UFO most common characteristics
