@@ -7,7 +7,31 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <link rel="stylesheet" href="static/css/style.css"> -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>.split {height: 15%; width: 50%; position: absolute; z-index: 1; top: auto;
+      overflow-x: hidden; padding-top: 5%;}
+      .left {left: 0; background-color: red;}
+      .right {right: 0; background-color: red;}
+      .centered {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;}
+    </style>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      .column {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+      }
+      
+      /* Clearfix (clear floats) */
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      </style>
 </head>
 <style>body {background-color: rgb(127, 72, 190);}</style>
 
@@ -15,48 +39,70 @@
     <nav>
         <h1 style="background-color: rgb(18, 15, 20)">
         UFO DATABASE FOR EVERYONE</h1>
+        <div class="row">
+          <div class="column">
+            <img src="aliens.jfif" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="UFOspotters.jfif" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="nasa.jfif" style="width:100%">
+          </div>
+        </div>
+
+        
         <div class="text1"><h3>We collect data about UFOs</h3></div>
         <div id="text2"><h3>You can see and search our data collection below</h3></div>
         <div class="sightsGIS" style="background-color: rgb(18, 15, 20)">
-          <a href="https://www.arcgis.com/apps/webappviewer/index.html?id=ddda71d5211f47e782b12f3f8d06246e"><h2>Map of reported UFOs</h2></a>
+          <a href="https://www.arcgis.com/apps/webappviewer/index.html?id=ddda71d5211f47e782b12f3f8d06246e"><h2>Map of reported UFOs (click)</h2></a>
         </div>
       
         <div class="deeplink">
           <div class="outer">
             <div class="inner" style="background-color: rgb(18, 15, 20)">
-              <a href="https://en.wikipedia.org/wiki/List_of_reported_UFO_sightings"><h2>Wikipedia List of UFOs</h2></a>
+              <a href="https://en.wikipedia.org/wiki/List_of_reported_UFO_sightings"><h2>Wikipedia List of UFOs (click)</h2></a>
             </div>
           </div>
         </div>
     
-        <div class="catch1">
-            <div class="col-md-offset-4 col-md-12">
-            <div class="text3"><h4 id="insert">Believe !</h4>
-            <h3>Do you believe in Aliens?</h3>
-            <button id="Alien">Yes</button>
-            <button id="NoAlien">No</button>  
+        <div class="split left">
 
-            </div>
-            </div>
+                <div class="centered">
+                  <h3>Do you believe in Aliens?</h3>
+                  <button id="Alien">Yes</button>
+                  <button id="NoAlien">No</button>
+                  <h4 id="insert">Believe !</h4>
+                </div>  
+
+        </div>
+
+        <div class="split right">
+
+                <div class="centered">
+                  <h3>Do you want to report a UFO?</h3>
+                  <button type="button" id="newUFO">Yes</button>
+                  <button type="button" id="NoUFO">No</button>
+                  <h4 id="Coming Soon">We will verify duplicates</h4>
+                </div>
+
         </div>
         
+      </nav>
 
-        <div class="catch2">
-            <div class="col-md-offset-4 col-md-8">
-                <h3>Do you want to report a UFO?</h3>
-                <button type="button" id="newUFO">Yes</button>
-                <button type="button" id="NoUFO">No</button>
-                <div class="text4">
-                  <h4 id="Coming Soon">We will verify</h4></div>
-            </div>
-        </div>
-        
+      <br>
+      <br>
+      <hr>
+      <br>
+      <br>
 
+      <div>
         <ul style="background-color: rgb(18, 15, 20)">
-            <h1>Search UFO</h1>
-            <div class="container">
+
+            <div class="container" style= 'position:relative; padding-top: 5%'>
+              <h1>Search UFO</h1>
                 <div class="row">
-                <div class="col-md-12">
+                  <div class="col-md-12">
                     <form id="form1"></form>
                         <div class="form-group">
                             <h3>Enter Date here (MM/DD/YYYY)</h3>
@@ -66,13 +112,12 @@
                         </div>
                         <button id="buttonA" type="button" class="btn btn-default" style="background-color: rgb(212, 18, 93)">Enter</button>
                     </form>
-
-                </div>
+                  </div>
                 </div>
                 <hr>
                 <div class="row">
                 <div class="col-md-12">
-                  <form id="form2"></form>
+                  <form id="form2">
                       <div class="form-group">
                           <h3>Search UFO by City</h3>
                           <label for="text102">Input City and press the button</label>
@@ -84,9 +129,11 @@
                 </div>
                 </div>
                 <hr>
+                <img src="wikipedia.jfif">
+                <hr>
                 <div class="row">
                   <div class="col-md-12">
-                    <form id="form3"></form>
+                    <form id="form3">
                         <div class="form-group">
                             <h3>Search UFO by State</h3>
                             <label for="text103">Input State and press the button</label>
@@ -96,35 +143,38 @@
                         <button id="buttonC" type="button" class="btn btn-default" style="background-color: rgb(212, 18, 93)">Enter</button>
                     </form>
                   </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <form id="form4"></form>
-                          <div class="form-group">
-                              <h3>Search UFO by Shape</h3>
-                              <label for="text103">Input Shape: cicle,light,triangle,ballfire,formation,other,unknown (and then press the button)</label>
-                              <input class="form-control" id="UFOShape" name="text-input" type="text" placeholder="fireball">
-                              <!-- <input id="input-field" type="text"> -->
-                          </div>
-                          <button id="buttonD" type="button" class="btn btn-default" style="background-color: rgb(212, 18, 93)">Enter</button>
+                </div>
+                <hr>
+                <img src="seti.jpg">
+                <hr>
+                <div class="row">
+                  <div class="col-md-12">
+                    
+                    <form id="form4">
+                      <div class="form-group">
+                        <h3>Search UFO by Shape</h3>
+                        <label for="text103">Input Shape: cicle,light,triangle,ballfire,formation,other,unknown (and then press the button)</label>
+                        <input class="form-control" id="UFOShape" name="text-input" type="text" placeholder="fireball">
+                      </div>
+                        <button id="buttonD" type="button" class="btn btn-default" style="background-color: rgb(212, 18, 93)">Enter</button>
                       </form>
                     </div>
                   </div>
                 </div>
-        </ul>                
+        </ul>
+        </div>                
                 <br>
+                
+                  
+                
                 <hr>
                 <br>
-
-
-
                 <h1>Filtered Data Summary</h1>
                 <div class="container" style="background-color: rgb(226, 221, 230)">
                   <div class="row1">
                     <div class="col-md-12">
                       <!-- UFO Selection table-->
-                      <table id="Subset" class="SelectedUFOs" border="2">
+                      <table id="Subset" class="SelectedUFOs table-striped" >
                         <thead>
                           <tr display: table-row>
                               <th>datetime</th>
@@ -142,9 +192,6 @@
                     </div>
                   </div>
                 </div>
-              
-
-
 
         <h1>Full UFO Collection Table</h1>
         <div class="container" style="background-color: rgb(136, 133, 138)">
@@ -168,8 +215,6 @@
               </div>
             </div>
         </div>
-
-    </nav>    
 </body>
 
 <script src="java.js" type="text/javascript"></script>

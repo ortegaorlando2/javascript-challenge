@@ -99,15 +99,6 @@ function runEnter1(event) {
     console.log(tableElement1)
     console.log(tbody1)
 
-  
-  // console.log(someAliens);
-  
-  //someAliens.append('Below is what we found'); 
-  // console.log(row);
-  
-
-  // generateTable(someAliens, filteredData1)
-
 
   //define callback function
 function processRecord1(row){
