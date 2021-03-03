@@ -3,8 +3,8 @@
 console.log("Place to test my UFO script");
 // create variables
 let dateToday = 'Today';
-let visitorsToday = 1002
-let previousVisitors = '1001'
+let visitorsToday = 1001
+let previousVisitors = '1'
 let visitorsTotal = parseInt(previousVisitors) + visitorsToday
 let believeAliens = true;
 let sights = [1,2,3]
@@ -25,11 +25,54 @@ let shape="sphere"
 let durationMinutes="No time"
 let comment="moving fast"
 
-if (visitorsToday === 0){console.log('Bummer')}
-if(previousVisitors !== '1001') {console.log('Somebody visited on:  date!')}
 
-if(visitorsToday > parseInt(previousVisitors)){console.log('So many visitors today!')}
-if(visitorsToday !== 0 && believeAliens){console.log(`Join the club: ${visitorsTotal} believers and counting!`)}
+if (visitorsToday === 1001) {document.getElementById("insert").innerHTML=`Before you we had ${visitorsToday} visitors`};
+
+
+// getting a reference to the Yes/No buttons
+let clickCount1 = 0;
+let button = d3.select("#Alien");
+button.on("click", () => {
+    clickCount1++;
+    if(clickCount1 === 1){visitorsTotal=visitorsToday+1
+        document.getElementById("insert").innerHTML=`Now we have ${visitorsTotal} visitors.
+        Join the club: ${clickCount1} believers and counting!`}
+    console.log(`button clicked ${clickCount1}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
+
+clickCount2=0
+let button2 = d3.select("#NoAlien");
+button2.on("click", () => {
+    clickCount2++;
+    if(clickCount2 === 1){visitorsTotal=visitorsToday+1
+        document.getElementById("insert").innerHTML=`Now we have ${visitorsTotal} visitors. 
+        You should believe. They are out there  !!!`}
+    console.log(`button clicked ${clickCount2}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
+
+clickCount3=0
+// getting a reference to the Yes button
+let button3 = d3.select("#newUFO");
+button3.on("click", () => {
+    clickCount3++;
+    if(clickCount3 === 1){
+        document.getElementById("Coming Soon").innerHTML=`Coming Soon!: Form to report your own UFO`}
+    console.log(`button clicked ${clickCount3}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
+
+clickCount4=0
+let button4 = d3.select("#NoUFO");
+button4.on("click", () => {
+    clickCount4++;
+    if(clickCount4 === 1){
+        document.getElementById("Coming Soon").innerHTML=`Maybe tomorrow?`}
+    console.log(`button clicked ${clickCount4}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
+
 
 if (visitorsTotal === 20000){console.log(`${visitorsTotal} visitors milestone!`)}
 else if (visitorsToday >0){console.log(`approaching our next visitor's milestone`)}
@@ -126,9 +169,6 @@ let UFO=[{"numSight":1 ,'shapeShape':"fireball",'shapeCity':"Phoenix",'shapeCoun
         {"numSight":4 ,'shapeShape':'other','shapeCity':"Las Cruces",'shapeCountry':"us"},
         {"numSight":5 ,'shapeShape':'unknown','shapeCity':"Valladolid",'shapeCountry':"Mexico"}];
 
-// let shapeUfo = UFO[3];
-
-// console.log(` What is type ${shapeUfo}`)
 
 function objectShape(shape){
     console.log(`The shape of the UFO was like a ${shape}`)   
@@ -139,24 +179,6 @@ function objectCity(city){
 function objectCountry(country){
     console.log(`The country was ${country}`)   
     return }
-
-    
-//     function countShape(shape){
-//     if(shape === 'fireball'){
-//         numSpheres = numSpheres++}
-//     else if (shape === "circle"){
-//         numDiscs = numDiscs++
-//     }
-//     else if(shape === "light"){
-//         numCilinders = numCilinders++}
-//     else if(shape === "triangle"){
-//         numArrows === numArrows++
-//     }
-//     else
-//         numUnknown === numUnknown++
-// }
-
-    // console.log(comment)
 
 //iterate on the UFO most common characteristics
 function commonUfos(UFO){

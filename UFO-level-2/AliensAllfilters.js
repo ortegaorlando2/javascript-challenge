@@ -1,12 +1,23 @@
-// Providing some cool links
+// Select the text of an HTML element
+let text1 = d3.select(".text1").text();
+console.log("text1 says: ", text1);
 
+let text2 = d3.select("#text2").text();
+console.log("text2 says: ", text2);
+
+// // Modify the text of an HTML element
+// d3.select(".text1").text("I knew that you believed in Aliens!");
+
+// // Select an element's child element
+// An object is returned
 let sightsGIS= d3.select(".sightsGIS>a").html();
+// // // Capture the child element's href attribute
 let myLinkAnchor = d3.select(".inner>a");
 let myLinkAnchorAttribute = myLinkAnchor.attr("href");
 
 d3.selectAll("li").style("color", "green");
 
-//-------------IMPORT DATA TABLE-------------------------
+
 //select the table inside html
 d3.select('.table')
 //Assign this table to a D3 element for manipulation
@@ -16,7 +27,7 @@ tableElement.classed('table-striped', true)
 //select the body of the html table
 let tbodyElem = tableElement.select('tbody');
 
-
+//--------------------------------------
 //let tbody = d3.select("tbody");
 //define callback function
 function processRecord(row){
@@ -26,6 +37,49 @@ function processRecord(row){
 }
 data.forEach (processRecord);
 //----------------------------------------
+
+
+//$$$$$$$$$$$$$$$$BUTTONS EXTRA$$$$$$$$$$$$$$$$$$$$$$$
+let clickCount = 0;
+
+// getting a reference to the Yes/No buttons
+let visitors =0;
+
+let button = d3.select("#Alien");
+button.on("click", () => {
+    clickCount++;
+    if(clickCount === 1){visitorsTotal ++}
+    console.log(`button clicked ${clickCount}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
+
+clickCount2=0
+let button2 = d3.select("#NoAlien");
+button2.on("click", () => {
+    clickCount2++;
+    if(clickCount2 === 1){visitorsTotal ++}
+    console.log(`button clicked ${clickCount2}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
+
+clickCount3=0
+// getting a reference to the Yes button
+let button3 = d3.select("#newUFO");
+button3.on("click", () => {
+    clickCount3++;
+    if(clickCount3 === 1){visitorsTotal ++}
+    console.log(`button clicked ${clickCount3}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
+
+clickCount4=0
+let button4 = d3.select("#NoUFO");
+button4.on("click", () => {
+    clickCount4++;
+    if(clickCount4 === 1){visitorsTotal ++}
+    console.log(`button clicked ${clickCount4}`);
+    console.log(`Visitors ${visitorsTotal}`)
+});
 
 
 // ~~~~~~~~~~~~~~~~FORMS~~~~~~~~~~~~~~~~~~~~

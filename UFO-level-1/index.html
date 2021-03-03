@@ -13,37 +13,41 @@
 
 <body>
     <nav>
-        <h1>Look for your UFO here</h1>
-        <div class="text1">We collect data about UFOs</div>
-        <div id="text2">You can find our data collection below</div>
+        <h1 style="background-color: rgb(18, 15, 20)">
+        UFO DATABASE FOR EVERYONE</h1>
+        <div class="text1"><h3>We collect data about UFOs</h3></div>
+        <div id="text2"><h3>You can see and search our data collection below</h3></div>
         <div class="sightsGIS" style="background-color: rgb(18, 15, 20)">
-          <a href="https://www.arcgis.com/apps/webappviewer/index.html?id=ddda71d5211f47e782b12f3f8d06246e">Map of reported UFOs</a>
+          <a href="https://www.arcgis.com/apps/webappviewer/index.html?id=ddda71d5211f47e782b12f3f8d06246e"><h2>Map of reported UFOs</h2></a>
         </div>
       
         <div class="deeplink">
           <div class="outer">
             <div class="inner" style="background-color: rgb(18, 15, 20)">
-              <a href="https://en.wikipedia.org/wiki/List_of_reported_UFO_sightings">Wikipedia List of UFOs</a>
+              <a href="https://en.wikipedia.org/wiki/List_of_reported_UFO_sightings"><h2>Wikipedia List of UFOs</h2></a>
             </div>
           </div>
         </div>
     
         <div class="catch1">
-            <div class="col-md-offset-4 col-md-4">
+            <div class="col-md-offset-4 col-md-12">
+            <div class="text3"><h4 id="insert">Believe !</h4>
             <h3>Do you believe in Aliens?</h3>
             <button id="Alien">Yes</button>
             <button id="NoAlien">No</button>  
-            <div class="text3">?&nbsp</div>
+
+            </div>
             </div>
         </div>
         
 
         <div class="catch2">
-            <div class="col-md-offset-4 col-md-4">
+            <div class="col-md-offset-4 col-md-8">
                 <h3>Do you want to report a UFO?</h3>
                 <button type="button" id="newUFO">Yes</button>
                 <button type="button" id="NoUFO">No</button>
-                <div class="text4">&nbsp</div>
+                <div class="text4">
+                  <h4 id="Coming Soon">We will verify</h4></div>
             </div>
         </div>
         
@@ -56,10 +60,9 @@
                     <form id="form1"></form>
                         <div class="form-group">
                             <h3>Enter Date here (MM/DD/YYYY)</h3>
-                            <label for="text101">Input Date </label>
+                            <label for="text101">Input Date and press the button</label>
                             <input class="form-control" id="UFOSearcher" type="date" name="text-input" placeholder="MM/DD/YYYY"
                             />
-                            <!-- <input id="input-field" type="text"> -->
                         </div>
                         <button id="buttonA" type="button" class="btn btn-default" style="background-color: rgb(212, 18, 93)">Enter</button>
                     </form>
@@ -72,7 +75,7 @@
                   <form id="form2"></form>
                       <div class="form-group">
                           <h3>Search UFO by City</h3>
-                          <label for="text102">Input City </label>
+                          <label for="text102">Input City and press the button</label>
                           <input class="form-control" id="UFOCity" name="text-input" type="text" placeholder="Houston">
                           <!-- <input id="input-field" type="text"> -->
                       </div>
@@ -86,7 +89,7 @@
                     <form id="form3"></form>
                         <div class="form-group">
                             <h3>Search UFO by State</h3>
-                            <label for="text103">Input State </label>
+                            <label for="text103">Input State and press the button</label>
                             <input class="form-control" id="UFOState" name="text-input" type="text" placeholder="ut">
                             <!-- <input id="input-field" type="text"> -->
                         </div>
@@ -100,7 +103,7 @@
                       <form id="form4"></form>
                           <div class="form-group">
                               <h3>Search UFO by Shape</h3>
-                              <label for="text103">Input Shape: cicle,light,triangle,ballfire,formation,other,unknown </label>
+                              <label for="text103">Input Shape: cicle,light,triangle,ballfire,formation,other,unknown (and then press the button)</label>
                               <input class="form-control" id="UFOShape" name="text-input" type="text" placeholder="fireball">
                               <!-- <input id="input-field" type="text"> -->
                           </div>
@@ -108,40 +111,54 @@
                       </form>
                     </div>
                   </div>
-                  <br>
-                  <hr>
-                  <br>
-
                 </div>
-                <div class="row">
+        </ul>                
+                <br>
+                <hr>
+                <br>
+
+
+
+                <h1>Filtered Data Summary</h1>
+                <div class="container" style="background-color: rgb(226, 221, 230)">
+                  <div class="row1">
                     <div class="col-md-12">
-                        <h1>Filtered Data Summary</h1>
-                        <ul class="summary"></ul>
+                      <!-- UFO Selection table-->
+                      <table id="Subset" class="SelectedUFOs" border="2">
+                        <thead>
+                          <tr display: table-row>
+                              <th>datetime</th>
+                              <th>city</th>
+                              <th>state</th>
+                              <th>country</th>
+                              <th>shape</th>
+                              <th>duration</th>
+                              <th>comment</th>
+                          </tr>
+                        </thead>  
+                        <tbody>
+                        </tbody> 
+                      </table> 
                     </div>
+                  </div>
                 </div>
-                <tbody2 #selection></tbody2>
-                </div>
-            <h4 class="output"></h4>
+              
 
 
-        </ul>
 
         <h1>Full UFO Collection Table</h1>
         <div class="container" style="background-color: rgb(136, 133, 138)">
             <div class="row">
               <div class="col-md-12">
-                <!-- UFO table-->
                 <table class="UFO table">
                   <thead>
                     <tr>
                         <th>datetime</th>
-                        <!-- <th>time</th> -->
                         <th>city</th>
                         <th>state</th>
                         <th>country</th>
                         <th>shape</th>
                         <th>duration</th>
-                        <!-- <th>lights</th> -->
                         <th>comment</th>
                     </tr>
                   </thead>
